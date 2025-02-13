@@ -1,21 +1,20 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule,NgFor],
+  imports: [MatIconModule, FormsModule, NgFor],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent 
-{
+export class AppComponent {
   tarefas: { tarefa: string, descricao: string, concluida: boolean }[] = [];
   novaTarefa: { tarefa: string, descricao: string, concluida: boolean } = { tarefa: '', descricao: '', concluida: false };
 
-  adicionarTarefa()
-  {
+  adicionarTarefa() {
     this.tarefas.push(this.novaTarefa);
     this.novaTarefa = { tarefa: '', descricao: '', concluida: false };
   }

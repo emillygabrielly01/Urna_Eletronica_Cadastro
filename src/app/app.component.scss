@@ -1,11 +1,11 @@
-span
+span 
 {
-    margin: 2%;
-    font-size:200%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 2%;
+  font-size: 200%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-th
+th 
 {
   width: 50%;
   background-color: #00d9ffa6;
@@ -16,4 +16,10 @@ th
   padding: 10px;
 }
 
-
+mat-icon 
+{
+  background-color: #00d9ffa6;
+  font-size: 30px;
+  color: #000000a6;
+  border-radius: 1%;
+}
