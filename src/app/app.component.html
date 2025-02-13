@@ -1,0 +1,30 @@
+<div>
+  <div class="div1" style="
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #00d9ffa6;
+  justify-content: center;
+  "><span>Lista de Tarefas</span>
+</div>
+  
+  <table>
+    <tr>
+      <th>Tarefa</th>
+      <th>Descrição</th>
+      <th>Concluída</th>
+    
+      <tr *ngFor="let tarefa of tarefas">
+        <td>{{tarefa.tarefa}}</td>
+        <td>{{tarefa.descricao}}</td>
+        <td>{{tarefa.concluida}}</td>
+      </tr>
+  </table>
+
+  <div class="">
+   
+    
+      
+     
+  
