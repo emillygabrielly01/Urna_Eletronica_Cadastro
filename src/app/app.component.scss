@@ -1,12 +1,10 @@
-span 
-{
+span {
   margin: 2%;
   font-size: 200%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-th 
-{
+th {
   width: 50%;
   background-color: #00d9ffa6;
   color: rgb(10, 10, 10);
@@ -16,10 +14,25 @@ th
   padding: 10px;
 }
 
-mat-icon 
-{
+.adicionarTarefa {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-background {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   background-color: #00d9ffa6;
+}
+
+mat-icon {
   font-size: 30px;
   color: #000000a6;
-  border-radius: 1%;
 }
