@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-barra',
@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './barra.component.html',
   styleUrl: './barra.component.scss'
 })
-export class BarraComponent {
-
+export class BarraComponent 
+{
 }
