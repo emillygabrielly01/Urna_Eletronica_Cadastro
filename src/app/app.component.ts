@@ -4,12 +4,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BarraComponent } from "./barra/barra.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
+import { FotoComponent } from "./foto/foto.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatIconModule, MatIconModule, MatFormFieldModule, MatInputModule, MatIconModule, BarraComponent, CadastroComponent],
+  imports: [MatIconModule, MatIconModule, MatFormFieldModule, MatInputModule, MatIconModule, BarraComponent, CadastroComponent, FotoComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

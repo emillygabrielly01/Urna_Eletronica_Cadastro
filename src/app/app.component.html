@@ -1,37 +1,46 @@
 <div class="divPai" style="
-width: 100%;
-height: 95%; 
-display: flex;
-flex-wrap: nowrap;
-flex-direction: column; ">
-<div class="titulo" style=" 
-        width: 100%;
-        height: 15%;  
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;  
-        background-color: #0400ff;">
-        <app-barra></app-barra>
-    </div>
-    <div class="divfilho" style="height: 26%;
+    width: 100%;
+    height: 95%; 
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;">
+    <app-barra></app-barra>
+
+    <div class="divfilho" style="
+        height: 33%;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        background-color: #8bbeee;">
-       <div class="divCadastros" style="
-       height: 100%;
-       width: 50%;
-       display: flex;
-       flex-direction: row;
-       background-color: #1d2a36;
-       align-items: center;
-       justify-content: center;">
-     <div class="Cadastro" >
-       <app-cadastro></app-cadastro>
-     </div>
-   </div>
-    </div>
+        background-color:#000000;">
+
+        <div class="divCadastros" style="
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            background-color:#8bbeee;">
+            <app-cadastro></app-cadastro>
+        </div>
+        
+        <div class="foto" style="
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            
+            background-color: #8bbeee;">
+              <div class="foto" style="
+              width: 30%;
+              height: 90%;
+              display: flex;
+              flex-direction: row;
+              border: 1px solid blanchedalmond;
+              background-color: #9030ad;">
+        </div><app-foto></app-foto>
+        
 </div>

@@ -1,9 +1,10 @@
-import { Component, input, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-barra',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './barra.component.html',
   styleUrl: './barra.component.scss'
 })
