@@ -1,19 +1,20 @@
 <div class="divPai" style="
     width: 100%;
-    height: 95%; 
+    height: 100%; 
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: column;">
+    flex-direction: column;
+    border: 1px solid black;">
     <app-barra></app-barra>
 
     <div class="divfilho" style="
-        height: 33%;
+        height: 40%;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        background-color:#000000;">
+        background-color:#ffffff;">
 
         <div class="divCadastros" style="
             width: 50%;
@@ -22,7 +23,7 @@
             align-items: center;
             flex-direction: row;
             justify-content: center;
-            background-color:#8bbeee;">
+            background-color:#ffffff;">
             <app-cadastro></app-cadastro>
         </div>
         
@@ -31,16 +32,19 @@
             height: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
             flex-direction: column;
-            
-            background-color: #8bbeee;">
-              <div class="foto" style="
-              width: 30%;
-              height: 90%;
-              display: flex;
-              flex-direction: row;
-              border: 1px solid blanchedalmond;
-              background-color: #9030ad;">
-        </div><app-foto></app-foto>
-        
+            background-color: #ffffff;">
+
+              <div class="divfoto" style="
+                margin: 1%;
+                width: 42%; 
+                height: 55%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #e2e1e1;">foto
+             </div><app-foto></app-foto>
+        </div>     
+    </div>
 </div>
