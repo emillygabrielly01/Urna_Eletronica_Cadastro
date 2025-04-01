@@ -1,10 +1,17 @@
 :host
 {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.mat-mdc-unelevated-button:not(:disabled) {
-    color:#ffffff;
-    background-color: #0861BD;
+.mat-mdc-unelevated-button:not(:disabled) 
+{
+  color:#ffffff;
+  background-color: #0861BD;
 }
+
+
+  
+
