@@ -9,13 +9,12 @@
     background-color: #ffffff;
 }
 
-
 mat-icon 
 {
+    display: flex; 
     font-size: 31px;
-    display: flex;
+    color: #0861BD;
     align-items: center;
     justify-content: center;
-    color: #0861BD;
-    
 }
+
