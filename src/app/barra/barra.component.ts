@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
-@Component({
+@Component
+({
   selector: 'app-barra',
   standalone: true,
   imports: [MatIconModule],
@@ -11,4 +12,5 @@ import { MatIconModule } from '@angular/material/icon';
 export class BarraComponent 
 {
   tipoCadastro: 'Cadastro de Professores' | 'Cadastro de Ajudantes' = 'Cadastro de Professores';
+
 }

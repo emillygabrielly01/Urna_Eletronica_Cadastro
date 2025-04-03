@@ -4,14 +4,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { FotoComponent } from "../foto/foto.component";
 
-@Component({
+@Component
+({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatIconModule,MatButtonModule, MatDividerModule,],
+  imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, MatDividerModule, FotoComponent],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss'
 })
-export class CadastroComponent {
+export class CadastroComponent 
+{
 
 }

@@ -1,17 +1,20 @@
 :host
 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  width: 50%;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: #ff4c4c;
 }
 
-.mat-mdc-unelevated-button:not(:disabled) 
+img
 {
-  color:#ffffff;
-  background-color: #0861BD;
+  margin: 10px;
+  border: 1px solid black;
 }
 
-
-  
-
+button
+{
+  width: 100%;
+}

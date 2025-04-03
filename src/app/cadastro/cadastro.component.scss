@@ -1,34 +1,17 @@
 :host
 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  margin: 3%;
+  flex-direction: row
 }
 
-mat-label
+mat-form-field
 {
   width: 100%;
-  height: 90%;
-  color: #0861BD;
-  border-color: blue 
 }
 
-.mat-mdc-unelevated-button:not(:disabled) 
+button
 {
-  color:#ffffff;
-  background-color: #0861BD;
-}
-    
-
-mat-form-field 
-{
-  margin: 5px;
-  width: 350px !important;   
-}
-  
-input 
-{
-  margin: 6px;
-  font-size: 18px;
-  height: 30px !important;
+  width: 100%;
 }
