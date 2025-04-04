@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FotoComponent } from "../foto/foto.component";
 import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
-import { FotoComponent } from "../foto/foto.component";
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component
 ({
