@@ -12,4 +12,5 @@ import { MatIconModule } from '@angular/material/icon';
 export class BarraComponent 
 {
   tipoCadastro: 'Cadastro de Professores' | 'Cadastro de Ajudantes' = 'Cadastro de Professores';
+  cadastro: 'Professores' | 'Ajudantes' = 'Professores';
 }
