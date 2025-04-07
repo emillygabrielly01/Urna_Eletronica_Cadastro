@@ -1,5 +1,8 @@
 export class Candidato 
 {
-    public nome!: string;
-    public numero!:string;
+    constructor
+    (
+        public nome: string,
+        public numero:string
+    ){}
 }

@@ -33,6 +33,10 @@ const ELEMENT_DATA: PeriodicElement[] =
 
 export class ListaCadastrosAjudantesComponent 
 {
-  displayedColumns: string[] = ['nomeProfessor', 'numero', 'ajudante', 'editar','excluir'];
+cadastrarAjudante() 
+{
+throw new Error('Method not implemented.');
+}
+  displayedColumns: string[] = ['nomeProfessor', 'numero','editar','excluir'];
   dataSource = ELEMENT_DATA;
 }
