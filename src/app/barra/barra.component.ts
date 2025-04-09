@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component
@@ -15,4 +15,10 @@ export class BarraComponent
   tipoCadastro: 'Cadastro de Professores' | 'Cadastro de Ajudantes' = 'Cadastro de Professores';
   @Input() nomeIcone:string = '';
 
+  @Output() clicouIcone= new EventEmitter <void>();
+
+  botaoClicado(){
+    this.clicouIcone.emit();
+  }
+  
 }

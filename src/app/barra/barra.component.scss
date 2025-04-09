@@ -15,8 +15,14 @@ mat-icon
     
     display: flex; 
     font-size: 31px;
+    cursor: pointer;
     color: #0861BD;
+    opacity: 50%;
     align-items: center;
     justify-content: center;
 }
 
+mat-icon:hover
+{
+    opacity: 100%;
+}
