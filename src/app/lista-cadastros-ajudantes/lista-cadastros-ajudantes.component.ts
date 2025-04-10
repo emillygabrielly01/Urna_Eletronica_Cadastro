@@ -1,26 +1,7 @@
-import { Component } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
-
-export interface PeriodicElement 
-{
-  numero: string;
-  editar: string;
-  excluir:string;
-  nomeProfessor: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = 
-[
-  {nomeProfessor: 'Ester', numero: '200',editar: '', excluir: ''},
-  {nomeProfessor: 'Noemi', numero: '201',editar: '', excluir: ''},
-  {nomeProfessor: 'Ana', numero: '203',editar: '', excluir: ''},
-  {nomeProfessor: '', numero: '',editar: '', excluir: ''},
-  {nomeProfessor: '', numero: '',editar: '', excluir: ''},
-  {nomeProfessor: '', numero: '',editar: '', excluir: ''},
-  {nomeProfessor: '', numero: '',editar: '', excluir: ''},
-  {nomeProfessor: '', numero: '',editar: '', excluir: ''},
-
-];
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { Ajudante } from '../models/ajudadnte.model';
+import { Router } from '@angular/router';
 
 @Component
 ({
@@ -30,13 +11,33 @@ const ELEMENT_DATA: PeriodicElement[] =
   templateUrl: './lista-cadastros-ajudantes.component.html',
   styleUrl: './lista-cadastros-ajudantes.component.scss'
 })
+export class ListaCadastrosAjudantesComponent implements OnInit, AfterViewInit
+{
+  displayedColumns: string[] = ['nomeAjudante', 'numero','editar','excluir'];
+  dataSource = new MatTableDataSource<Ajudante>();
 
-export class ListaCadastrosAjudantesComponent 
-{
-cadastrarAjudante() 
-{
-throw new Error('Method not implemented.');
+  constructor(private router: Router) 
+  {
+
+  }
+
+  ngOnInit(): void 
+  {
+      
+  }
+  
+  ngAfterViewInit(): void 
+  {
+    this.dataSource.data = Ajudante.GetAll();
+  }
+  
+
+  cadastrarAjudante() 
+  {
+    this.router.navigateByUrl('/cadastro/ajudante');
+  }
+
+
 }
-  displayedColumns: string[] = ['nomeProfessor', 'numero','editar','excluir'];
-  dataSource = ELEMENT_DATA;
-}
+
+

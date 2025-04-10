@@ -38,4 +38,5 @@ export class ListaCadastrosProfessorComponent implements OnInit, AfterViewInit
   {
     this.router.navigateByUrl('/cadastro/professor')
   }
+
 }
