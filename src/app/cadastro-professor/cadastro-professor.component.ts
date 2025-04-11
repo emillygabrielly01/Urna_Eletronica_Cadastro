@@ -23,3 +23,4 @@ export class CadastroProfessorComponent
      this.router.navigateByUrl('/')
   }
 }
+

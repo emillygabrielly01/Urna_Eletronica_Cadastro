@@ -12,13 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class BarraComponent 
 {
-  tipoCadastro: 'Cadastro de Professores' | 'Cadastro de Ajudantes' = 'Cadastro de Professores';
+  @Input() tipoCadastro!: 'Cadastro de Professores' | 'Cadastro de Ajudantes';
   @Input() nomeIcone:string = '';
-
   @Output() clicouIcone= new EventEmitter <void>();
 
-  botaoClicado(){
+  botaoClicado()
+  {
     this.clicouIcone.emit();
   }
+
+
   
 }

@@ -13,7 +13,7 @@
   <ng-container matColumnDef="ajudante">
     <th mat-header-cell *matHeaderCellDef> Ajudante </th>
     <td mat-cell *matCellDef="let element">
-      <div class="example-button-container">
+      <div class="example-button-container" (click)="cadastrarAjudante(element)" >
         <mat-icon>add</mat-icon>
       </div>
     </td>

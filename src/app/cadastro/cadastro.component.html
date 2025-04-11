@@ -1,18 +1,18 @@
 <div class="d-flex-column-center">
   <div class="w-75 ">
     <mat-form-field appearance="outline">
-      <mat-label>Nome do Professor</mat-label>
-       <input matInput placeholder="Nome do Professor">
+      <mat-label>Nome do&nbsp;{{nomelabel}}</mat-label>
+       <input matInput placeholder="Nome do {{nomelabel}}" [(ngModel)]="candidatoAtual.nome"/>
       <mat-icon matSuffix></mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Número do Professor</mat-label>
-       <input matInput placeholder="Número do Professor">
+      <mat-label>Número do {{nomelabel}}</mat-label>
+       <input matInput placeholder="Número do {{nomelabel}}" [(ngModel)]="candidatoAtual.numero" />
       <mat-icon matSuffix></mat-icon>
     </mat-form-field>
   </div>
-  <button class="w-75" mat-flat-button >Salvar</button>
+  <button class="w-75" mat-flat-button (click)="botaoClicado()" >Salvar</button>
 </div> 
 <app-foto></app-foto>
     
