@@ -2,12 +2,15 @@
   <div class="w-75 ">
     <mat-form-field appearance="outline">
       <mat-label>Nome do&nbsp;{{nomelabel}}</mat-label>
+       <!-- campo de entrada (<input matInput>) está vinculado ao modelo candidatoAtual.nome usando [(ngModel)]-->
        <input matInput placeholder="Nome do {{nomelabel}}" [(ngModel)]="candidatoAtual.nome"/>
       <mat-icon matSuffix></mat-icon>
     </mat-form-field>
+    <mat-checkbox class="example-margin" [(ngModel)]="caixaMarcada">Checked</mat-checkbox>
 
     <mat-form-field appearance="outline">
       <mat-label>Número do {{nomelabel}}</mat-label>
+       <!-- campo de entrada (<input matInput>) está vinculado ao modelo candidatoAtual.nome usando [(ngModel)]-->
        <input matInput placeholder="Número do {{nomelabel}}" [(ngModel)]="candidatoAtual.numero" />
       <mat-icon matSuffix></mat-icon>
     </mat-form-field>

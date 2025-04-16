@@ -1,6 +1,8 @@
 <div (click)="botaoClicado()">
-<mat-icon *ngIf="nomeIcone" aria-hidden="false" aria-label="Example home icon" [fontIcon]="nomeIcone"></mat-icon>
+    <!-- [fontIcon]="nomeIcone" Exibe o ícone se nomeIcone estiver definido. -->
+    <mat-icon *ngIf="nomeIcone" aria-hidden="false" aria-label="Example home icon"  [fontIcon]="nomeIcone"></mat-icon>
 </div>
+<!-- {{tipoCadastro}} Exibe o tipo de cadastro no centro da barra. -->
 <span style="flex-grow: 1;text-align: center;">{{tipoCadastro}}</span>
   
 
