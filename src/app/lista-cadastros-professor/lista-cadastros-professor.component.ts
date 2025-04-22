@@ -34,7 +34,6 @@ export class ListaCadastrosProfessorComponent implements OnInit, AfterViewInit
     {
       service.professores = Professor.GetAll(); 
     }
-   
   }
 
   ngOnInit(): void 
@@ -44,7 +43,6 @@ export class ListaCadastrosProfessorComponent implements OnInit, AfterViewInit
 
   ngAfterViewInit(): void 
   {
-    
     this.dataSource.data = this.service.professores;
   }
 
