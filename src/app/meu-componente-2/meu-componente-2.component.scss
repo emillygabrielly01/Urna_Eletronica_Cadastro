@@ -1,16 +1,22 @@
 :host
 {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-
-span
+.example-section 
 {
-    margin: 6px;
-    font-size: 18px;
+  margin: 12px 0;
+}
+  
+.example-margin 
+{
+  margin: 0 12px;
+}
+  
+ul
+{
+  margin-top: 4px;
+  list-style-type: none;
 }
 

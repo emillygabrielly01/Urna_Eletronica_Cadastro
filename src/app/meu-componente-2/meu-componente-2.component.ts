@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-meu-componente-2',
   standalone: true,
-  imports: [],
+  imports: [ MatCheckboxModule],
   templateUrl: './meu-componente-2.component.html',
   styleUrl: './meu-componente-2.component.scss'
 })

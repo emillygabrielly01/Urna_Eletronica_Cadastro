@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MeuComponente2Component } from "../meu-componente-2/meu-componente-2.component";
 import { NgFor } from '@angular/common';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { NgFor } from '@angular/common';
 export class MeuComponenteComponent 
 {
 //Esta definindo uma propriedade de entrada chamada adicionarTarefa que esta sendo inicializada como uma string vazia.
-@Input() adicionarTarefa = ''
+adicionarTarefa = ''
 //Esta declarando uma propriedade tarefas como um array de strings que esta inicializado como vazio.
 tarefas : string [] = [];
 
@@ -35,7 +36,6 @@ novaTarefa()
 //Esta definindo o metodo tarefaConcluida.
 tarefaConcluida(parametro1: string)
 {
-
   // limpar o array de adicionarTarfa.
   // this.tarefas = [];
   // O .findIndex retorna em qual posicoa foi encontrada a palavra contida em parametro1.
@@ -43,10 +43,8 @@ tarefaConcluida(parametro1: string)
   const posicaoItemLista = this.tarefas.findIndex(i => i == parametro1);
   console.clear();
   console.log(this.tarefas);
-  
   console.log(posicaoItemLista);
-  
-  
+  this.tarefas.splice(posicaoItemLista,1);
 }
 
 }
