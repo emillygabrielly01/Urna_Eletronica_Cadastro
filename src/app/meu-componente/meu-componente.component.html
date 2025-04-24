@@ -1,0 +1,14 @@
+<p>Sextou {{sextou}}</p>
+<span>Informe a Tarefa</span>
+
+<input matInput [(ngModel)]="minhaVariavel"/>
+<span>Informe o Tempo</span>
+<input type="number" matInput [(ngModel)]="tempoDaTarefa"/>
+<button type="button" (click)="incluirTarefa()">Incluir Tarefa</button>
+<!-- <app-meu-componente-2 (informacoesDaAna)="OlaMundo($event)" [nome]="minhaVariavel">
+
+</app-meu-componente-2> -->
+ 
+<app-meu-componente-lista-tarefas [tarefas]="minhasTarefas" (editarTarefa)="preencherTarefa($event)">
+
+</app-meu-componente-lista-tarefas>

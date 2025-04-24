@@ -1,0 +1,24 @@
+:host{
+    display: flex;
+    flex-direction: column;
+     width: 300px;
+     border-bottom: 1px solid grey;
+     padding: 3px;
+     
+}
+
+.linha{
+    display: flex;
+    flex-direction: row;
+     width: 300px;
+     border-bottom: 1px solid grey;
+     padding: 3px;
+     
+}
+span{
+    border-right: 1px solid grey;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+     
+}
