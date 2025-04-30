@@ -1,17 +1,32 @@
 <div class="linha" *ngFor="let tarefa of tarefas">
-<span style="width: 60%;">{{tarefa.nomeTarefa}}</span>
+
+<span style="width: 10%;">{{tarefa.idTarefa}}</span>
+
+<span style="width: 50%;">{{tarefa.nomeTarefa}}</span>
 
 <span style="width: 10%;">{{tarefa.tempoTarefa}}</span>
 
+<!-- tenho que utilizar o evento click no span, e mudar o status da tarefa de pendente pra concluido -->
 <span style="width: 25%;">{{tarefa.statusTarefa}}</span>
 
-<div (click)="enviarTarefa(tarefa)">
 
+
+<div (click)="enviarTarefa(tarefa)">
+     <!-- icone do editar -->
     <mat-icon>edit</mat-icon>
 </div>
 
 <div (click)="excluirTarefa(tarefa)">
-
+     <!-- icone de deletar -->
     <mat-icon>delete</mat-icon>
+
+
 </div>
+
+<div (click)="tarefaConcluida(tarefa)">
+    <mat-icon>check_circle_outline</mat-icon>
+
 </div>
+
+</div>
+

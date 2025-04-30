@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class MeuComponenteListaTarefasComponent {
 
  @Output() editarTarefa = new EventEmitter<Tarefa>(); 
+
 excluirTarefa(paramTarefa: Tarefa) {
   // "t" É A VARIAVEL QUE REPRESENTA UM ITEM DA LISTA DE TAREFAS
   // O METODO FINDINDEX LOCALIZA UM ITEM DA LISTA E RETORNA O POSIÇÃO DELE
@@ -37,7 +38,19 @@ excluirTarefa(paramTarefa: Tarefa) {
 
 enviarTarefa(paramTarefa: Tarefa) {
    this.editarTarefa.emit(paramTarefa);
+   console.log(paramTarefa);
+  
+  }
 
+  tarefaConcluida(paramTarefa: Tarefa){
+    paramTarefa.statusTarefa = 'Concluída';
+
+    // const tarefa = this.tarefas.find(t => t.idTarefa === paramTarefa.idTarefa);
+    // if (tarefa) {
+    // tarefa.statusTarefa = 'Concluída';
+     
+       
+    //  }
   }
 
 }

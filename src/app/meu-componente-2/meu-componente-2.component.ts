@@ -8,23 +8,23 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './meu-componente-2.component.scss'
 })
 export class MeuComponente2Component {
-  @Input() nome: string = '';
+  // @Input() nome: string = '';
 
-  @Input() estado: string = '';
+  // @Input() estado: string = '';
 
-  @Input() cabelo: string = '';
+  // @Input() cabelo: string = '';
 
-  @Output() informacoesDaAna = new EventEmitter<string>();
+  // @Output() informacoesDaAna = new EventEmitter<string>();
    
 
-  buscarInformacao(parametroA: string)
-  {
+  // buscarInformacao(parametroA: string)
+  // {
     
-    this.informacoesDaAna.emit(parametroA);
-  }
+  //   this.informacoesDaAna.emit(parametroA);
+  // }
 
-  enviarValorDoInput()
-  {
-    this.informacoesDaAna.emit(this.nome);
-  }
+  // enviarValorDoInput()
+  // {
+  //   this.informacoesDaAna.emit(this.nome);
+  // }
 }
