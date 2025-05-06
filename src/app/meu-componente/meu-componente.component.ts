@@ -33,7 +33,7 @@ incluirTarefa() {
   this.minhasTarefas.push(novaTarefa);
   } else {
     // aqui estou ALTERANDO um novo item ao array minhasTarefas
-
+   
     //nesta linha estou procurando um item na minha coleção usando como condição a propriedade idTarefa
     const ItemDaLista = this.minhasTarefas.find(mt => mt.idTarefa === this.idTarefa );
 
@@ -42,6 +42,13 @@ incluirTarefa() {
    if (ItemDaLista) {
     ItemDaLista.nomeTarefa = this.minhaVariavel;
     ItemDaLista.tempoTarefa = this.tempoDaTarefa;
+
+    const tarefa = this.minhasTarefas.find(t => t.idTarefa === ItemDaLista.idTarefa);
+    if (ItemDaLista) {
+      return
+    } else {
+      
+    }
 
    }
 
