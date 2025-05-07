@@ -1,6 +1,28 @@
-<input matInput [(ngModel)]="adicionarTarefa" placeholder="Tarefa">
-<!-- Ao ser clicado o botao chama o metodo novaTarefa -->
-<button  mat-button (click)="novaTarefa()">Adicionar</button>
-<div *ngFor="let tarefa of tarefas" style="background:#7777e7; width: 100%;">
-    <app-meu-componente-2 [descricaoTarefa]="tarefa" (tarefaConcluida)="tarefaConcluida($event)"></app-meu-componente-2>
+<p>Lista de Produtos</p>
+
+<div  style="display: flex; width: 100%; justify-content: center;">
+    
+<div style="display: flex; flex-direction: column; height: auto;">
+<span>Nome do produto</span>
+<input matInput [(ngModel)]="nomeProduto" placeholder="Nome do produto"/>
 </div>
+
+
+<div style="display: flex; flex-direction: column;" >
+<span>Preço</span>
+<input type="number" matInput  [(ngModel)]="precoProduto"/>
+</div>
+
+<div style="display: flex; flex-direction: column;" >
+<span>Qtd</span>
+<input type="number" matInput  [(ngModel)]="qtdProduto"/>
+</div>
+
+</div>
+
+
+
+<!-- Ao ser clicado o botao chama o metodo novaTarefa -->
+<button  mat-button (click)="gravarProduto()" class="button" >Gravar produto</button>
+
+<app-meu-componente-2  [produtos]="produtos" (produtoEditado)="preencherProduto($event)" ></app-meu-componente-2>

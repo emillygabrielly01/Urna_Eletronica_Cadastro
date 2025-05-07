@@ -1,8 +1,18 @@
-<!-- Ao ser clicado o botao chama o metodo concluida -->
-<section class="example-section" (click)="concluida()" >
-    <!-- Para exibe o valor da propriedade descricaoTarefa -->
-    <mat-checkbox class="example-margin"><span>{{descricaoTarefa}}</span> </mat-checkbox>
-</section> 
+<div class="linha" *ngFor="let produto of produtos">
+     
+    <span style="width: 50%;">{{produto.nome}}</span>
 
-
-
+    <span style="width: 25%;">{{produto.preco}}</span>
+     
+     <span style="width: 25%;">{{produto.qtd}}</span>
+     
+    <div class="icone" (click)="editarProduto(produto)" >
+         <!-- icone do editar -->
+        <mat-icon>edit</mat-icon>
+    </div>
+     
+    <div class="icone" (click)="excluirProduto(produto)">
+         <!-- icone de deletar -->
+        <mat-icon>delete</mat-icon>
+    </div>
+</div>
