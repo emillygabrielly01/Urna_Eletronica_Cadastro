@@ -1,0 +1,30 @@
+<p>Academias</p>
+
+    <div style="justify-content: center; display: flex;  flex-direction: column; align-items: center; ">
+
+        <div style="display: flex; justify-content: center;">
+            <span>Informe o nome da sua academia</span>
+            <input matInput [(ngModel)]="nomeAcademia"/>
+
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <span> Informe o telefone</span>
+            <input type="number" matInput [(ngModel)]="telefoneAcademia"/>
+            </div>
+
+        <button type="button" mat-button (click)="incluirAcademia()">Adicionar Academias</button>
+    
+
+<app-lista-academia [academias]="academias" (academiaEditada)="preencherAcademia($event)"></app-lista-academia>
+
+    </div>
+
+
+
+
+
+
+
+
+

@@ -1,14 +1,12 @@
-export class Tarefa {
-  nomeTarefa: string;
-  tempoTarefa: number;
-  statusTarefa: string;
-  idTarefa: number;
+export class Academia {
+  nomeAcademia: string = '';
+  telefoneAcademia: number = 0;
+  
+  
   
 
-  constructor(nomeTarefa: string, tempoTarefa: number, statusTarefa: string) {
-    this.idTarefa = 0;
-    this.nomeTarefa = nomeTarefa;
-    this.tempoTarefa = tempoTarefa;
-    this.statusTarefa = statusTarefa;
+  constructor(NomeAcademia: string, TelefoneAcademia: number) {
+    this.nomeAcademia = NomeAcademia;
+    this.telefoneAcademia = TelefoneAcademia;
   }
 }
