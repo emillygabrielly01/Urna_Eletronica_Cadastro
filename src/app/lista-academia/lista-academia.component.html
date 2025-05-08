@@ -1,10 +1,14 @@
- <div class="linha" *ngFor="let academia of academias">
+ <div style="display: flex; width: 78%; height: 100%;"  class="linha" *ngFor="let academia of academias">
 
 <!-- criando span parea ususario escrever as informações   -->
 
 <span style="width: 50%;">{{academia.nomeAcademia}}</span>
 
-<span style="width: 10%;">{{academia.telefoneAcademia}}</span>
+<span style="width: 10%;">{{academia.filialAcademia}}</span>
+
+<span style="width: 15%;">{{academia.telefoneAcademia}}</span>
+
+<span style="width: 50%;">{{academia.enderecoAcademia}}</span>
 
 <!-- evento click para editar e excluir academias -->
 <div class="icones" (click)="editarAcademia(academia)">
@@ -15,6 +19,7 @@
 <div class="icones"  (click)="excluirAcademia(academia)"> 
       <!-- icone de deletar  -->
    <mat-icon>delete</mat-icon>
+
 </div>
 </div> 
 

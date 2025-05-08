@@ -1,3 +1,4 @@
+
 :host
 {
   width: 100%;
@@ -5,14 +6,14 @@
   display: flex;
   align-items: center;
   background: #e6e6fa;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: column; 
+  
 }
  
  input
  {
   margin: 10px;
-//   height: 5%;
-//   width: 50%;
 }
  
 p
@@ -28,27 +29,31 @@ p
   justify-content: center;
   font-family:-webkit-body;
   align-items: center;
-  font-family: "Tagesschrift", system-ui;
+  background-color: aliceblue;
 }
  
 span
 {
-  font-size: 20px;
-  color:#6c63ff;
-  text-align: center;
-  margin: 10px;
+   font-size: 20px;
+   color:#6c63ff;
+   text-align: center;
+   margin: 10px;
   
 }
  
 button
 {
-  width: 39%;
-  height: 27%;
- background-color:#6c63ff;
- color: white;
- border: none;
- font-size: 16px;
- border-radius: 8px;
- cursor: pointer;
+  width: 50%;
+  height: 9%;
+  background-color:#6c63ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10%;
 }
+
+
+
  

@@ -6,7 +6,7 @@ import { MeuComponente2Component } from '../meu-componente-2/meu-componente-2.co
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MeuComponenteListaTarefasComponent } from '../meu-componente-lista-tarefas/meu-componente-lista-tarefas.component';
-import { Academia } from '../models/tarefas.model';
+import { Academia } from '../models/academia.model';
 import { ListaAcademiaComponent } from "../lista-academia/lista-academia.component";
 
 @Component({
@@ -21,37 +21,70 @@ export class CadastroAcademiasComponent
   // array do projeto
   academias: Academia[] = [];  // esta estrutura é uma variavel que representa um array (lista) matriz do tipo Academia
 
-  // variaveis do projeto
-  nomeAcademia: string = '';
-  telefoneAcademia = 0;
-  academiaSelecionada: Academia = new Academia('',0);
-
+  // variaveis do projeto academia
+    academiaSelecionada: Academia = new Academia('',0, 0, '');
+    nomeAcademia: string = '';
+    filialAcademia = 0;
+    telefoneAcademia = 0;
+    enderecoAcademia: string = '';
+    msgAcademia = '';
+   
   incluirAcademia() // metodo que inclui academias no projeto
   {
+      // não permite que o usuário adicione a mesma academia 
+      // toLowerCase converte os caracteres para minúsculas
+      // metodo some verifica se algum item está correto na condição estabelecida, se tiver retorna true
+    if (this.academias.find(a => a.nomeAcademia.toLowerCase() === this.nomeAcademia.toLowerCase() )) {
+      this.msgAcademia = 'Essa academia já foi cadastrada';
+      this.nomeAcademia = '';
+      this.filialAcademia = 0;
+      this.telefoneAcademia = 0;
+      this.enderecoAcademia = '';
+      return;
+    }
+
      // nesta linha estou procurando um item na minha array usando find que retorna o item da lista completo, mostrando todos os dados 
       const ItemDaLista= this.academias.find(a=> a.nomeAcademia === this.academiaSelecionada.nomeAcademia);
 
       if (ItemDaLista) // e se caso encontrar a academia e clicar no icone de editar, vai retornar o que foi escrito para ser editado
-      {
-        ItemDaLista.nomeAcademia = this.nomeAcademia;
-        ItemDaLista.telefoneAcademia = this.telefoneAcademia;
-      }
-      else // e não sendo encontrado, vai ser adioconado como nova academia 
-      {
-        const novaAcademia = (new Academia(this.nomeAcademia, this.telefoneAcademia,));
-        novaAcademia.telefoneAcademia = this.nomeAcademia.length + 1;
-        this.academias.push(novaAcademia);
-      }
+    {
+       ItemDaLista.nomeAcademia = this.nomeAcademia;
+       ItemDaLista.filialAcademia = this.filialAcademia;
+       ItemDaLista.telefoneAcademia = this.telefoneAcademia;
+       ItemDaLista.enderecoAcademia =this.enderecoAcademia;
+        
+    }
+      else // e não sendo encontrado, vai ser adicionado como nova academia 
+    {
+       const novaAcademia = new Academia(this.nomeAcademia, this.filialAcademia,this.telefoneAcademia,this.enderecoAcademia);
+       this.academias.push(novaAcademia);
+        
+    }
        // essas declarações é para limpar os campos 
       this.nomeAcademia= '';
+      this.filialAcademia = 0;
       this.telefoneAcademia = 0;
+      this.enderecoAcademia = '';
   }
-  preencherAcademia($event: Academia) // é metodo que preenche o formulario com o que for escrito
+    preencherAcademia($event: Academia) // é metodo que preenche o formulario com o que for escrito
   {
-    this.academiaSelecionada = $event;
-    this.nomeAcademia = $event.nomeAcademia;
-    this.telefoneAcademia = $event.telefoneAcademia;
+      this.academiaSelecionada = $event;
+      this.nomeAcademia = $event.nomeAcademia;
+      this.filialAcademia = $event.filialAcademia;
+      this.telefoneAcademia = $event.telefoneAcademia;
+      this.enderecoAcademia =$event.enderecoAcademia;
+
+      
+  }
+ // variaveis projeto alunos
+  alunoAcademia = '';
+  nomeAluno = '';
+  idadeAluno = 0;
+  pesoAluno = 0;
+  pressaoAltaAluno: boolean = true;
+  incluirAluno(){
     
+
   }
 }
       

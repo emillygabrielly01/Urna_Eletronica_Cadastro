@@ -1,24 +1,80 @@
-<p>Academias</p>
+<div style="justify-content: center; display: flex;  flex-direction: row; "> <!-- div pai de todos -->
 
-    <div style="justify-content: center; display: flex;  flex-direction: column; align-items: center; ">
+       <div style="display: flex;; flex-direction: column; width: 50%; height: 600px;">  <!-- div pai da academia -->
+        <p style="display: flex;">Academias</p>
 
         <div style="display: flex; justify-content: center;">
-            <span>Informe o nome da sua academia</span>
+            <span>Nome da  academia</span>
             <input matInput [(ngModel)]="nomeAcademia"/>
 
         </div>
 
         <div style="display: flex; justify-content: center;">
-            <span> Informe o telefone</span>
+            <span>Quantidade de filiais</span>
+            <input type="number" matInput [(ngModel)]="filialAcademia"/>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <span>Telefone da academia</span>
             <input type="number" matInput [(ngModel)]="telefoneAcademia"/>
-            </div>
+        </div>
 
-        <button type="button" mat-button (click)="incluirAcademia()">Adicionar Academias</button>
+        
+        <div style="display: flex; justify-content: center;">
+            <span>Endereço da academia</span>
+            <input matInput [(ngModel)]="enderecoAcademia"/>
+
+        </div>
+
+            <button type="button" mat-button (click)="incluirAcademia()">Adicionar Academias</button>
+            <span>{{msgAcademia}}</span>
+
+            <app-lista-academia [academias]="academias" (academiaEditada)="preencherAcademia($event)"></app-lista-academia>
+
+    </div> <!-- div pai da academia -->
+
+    <div style="display: flex; flex-direction: column; width: 50%; height: 600px;"> <!-- div pai dos alunos -->
+ <p>Alunos</p>
     
+        <div style="display: flex; justify-content: center;">
+            <span>Nome do aluno</span>
+            <input matInput [(ngModel)]="nomeAluno"/>
 
-<app-lista-academia [academias]="academias" (academiaEditada)="preencherAcademia($event)"></app-lista-academia>
+        </div>
 
-    </div>
+        <div style="display: flex; justify-content: center;">
+
+             <span>Idade do aluno</span>
+            <input type="number" matInput [(ngModel)]="idadeAluno"/>
+
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+
+            <span>Peso do aluno</span>
+            <input type="number" matInput [(ngModel)]="idadeAluno"/>
+
+        </div>
+        <div style="display: flex; justify-content: center;">
+
+            <span>Pressão alta?</span>
+            <input type="number" matInput [(ngModel)]="pressaoAltaAluno"/>
+        </div>
+             
+        <button type="button" mat-button (click)="incluirAluno()">Adicionar aluno</button>
+
+        </div> <!-- div pai dos alunos -->
+
+    </div> <!-- div pai de todos -->
+
+
+
+
+
+
+
+
+
 
 
 

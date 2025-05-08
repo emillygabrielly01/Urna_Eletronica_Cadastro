@@ -6,7 +6,7 @@ import { MeuComponente2Component } from "../meu-componente-2/meu-componente-2.co
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MeuComponenteListaTarefasComponent } from "../meu-componente-lista-tarefas/meu-componente-lista-tarefas.component";
-import { Academia} from '../models/tarefas.model';
+import { Academia} from '../models/academia.model';
 
 @Component({
   selector: 'app-meu-componente',

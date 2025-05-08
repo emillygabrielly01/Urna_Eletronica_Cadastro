@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Academia } from '../models/tarefas.model';
+import { Academia } from '../models/academia.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
