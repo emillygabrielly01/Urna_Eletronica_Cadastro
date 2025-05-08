@@ -6,30 +6,43 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../models/produto.model';
+import { VendasProdutosComponent } from "../vendas-produtos/vendas-produtos.component";
 
 
 @Component({
   selector: 'app-meu-componente',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MeuComponente2Component, CommonModule, FormsModule, ],
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MeuComponente2Component, CommonModule, FormsModule, VendasProdutosComponent],
   templateUrl: './meu-componente.component.html',
   styleUrl: './meu-componente.component.scss'
 })
 export class MeuComponenteComponent 
 {
-  qtdProduto = 1;
+  msgProduto = '';
+  qtdProduto = 0;
   nomeProduto = '';
   precoProduto = 0;
   produtos : Produto [] = [];
-  produtoSelecionado: Produto = new Produto('',0,1);
+  produtoSelecionado: Produto = new Produto('',0,0);
 
 
   //Metodo que esta no caso gravando um novo produto e editando um produto ja existente
   gravarProduto() 
   {
-     // find retorna o item da lista completo, mostrando todos os dados
+    // .some e um metodo que vai verifica se algum item da lista(array) atende a condição passada se for encontrada vai retornar true.
+    if (this.produtos.find(p => p.nome.toLowerCase() === this.nomeProduto.toLowerCase() )) 
+    {
+      this.msgProduto = 'Produto já existe.';
+      this.qtdProduto = 0;
+      this.nomeProduto = '';
+      this.precoProduto = 0;
+      return;
+     
+    }
+    // find retorna o item da lista completo, mostrando todos os dados
     // Esta no caso verificando se existe um produto na lista(arry)  
     const itemProdutos = this.produtos.find(p => p.nome === this.produtoSelecionado.nome)
+
     if (itemProdutos) 
     {
      // No caso se encontrar o produto e for editar ele vai retornar o produto para ser editado
@@ -46,10 +59,11 @@ export class MeuComponenteComponent
       // Adiciona esse novo produto criado a lista de produtos
       this.produtos.push(produtoNovo);
     }
+
     // Limpa os campos do formulario 
     this.nomeProduto = '';
     this.precoProduto = 0;
-    this.qtdProduto = 1;
+    this.qtdProduto = 0;
   }
 
    // Metodo que vai preencher o fomulario 

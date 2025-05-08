@@ -1,0 +1,29 @@
+<p>Vendas de Produtos</p>
+
+<div  style="display: flex; width: 100%; justify-content: center;">
+
+    <div style="display: flex; flex-direction: column; height: auto;">
+        <span>Código do produto</span>
+        <input matInput  placeholder="Código do produto"/>
+    </div>
+        
+    <div style="display: flex; flex-direction: column; height: auto;">
+    <span>Nome do produto</span>
+    <input matInput  placeholder="Nome do produto"/>
+    </div>
+
+
+    <div style="display: flex; flex-direction: column;" >
+    <span>Preço do Produto</span>
+    <input type="number" matInput placeholder="Preço do produto"/>
+    </div>
+
+    <div style="display: flex; flex-direction: column;" >
+    <span>Qtd do Produto</span>
+    <input type="number" matInput placeholder="Qtd do produto"/>
+    </div>
+
+</div>
+
+<button  mat-buttonclass="button" (click)="venderProduto()" >Vender produto</button>
+

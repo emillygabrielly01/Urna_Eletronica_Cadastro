@@ -9,20 +9,25 @@
 
 
 <div style="display: flex; flex-direction: column;" >
-<span>Preço</span>
+<span>Preço do Produto</span>  
 <input type="number" matInput  [(ngModel)]="precoProduto"/>
 </div>
 
 <div style="display: flex; flex-direction: column;" >
-<span>Qtd</span>
+<span>Qtd do Produto</span>
 <input type="number" matInput  [(ngModel)]="qtdProduto"/>
 </div>
 
 </div>
 
-
-
 <!-- Ao ser clicado o botao chama o metodo novaTarefa -->
 <button  mat-button (click)="gravarProduto()" class="button" >Gravar produto</button>
 
+<span>{{msgProduto}}</span>
+
 <app-meu-componente-2  [produtos]="produtos" (produtoEditado)="preencherProduto($event)" ></app-meu-componente-2>
+
+<div style="width: 100%; height: 50%; display: flex; flex-direction: column; align-items: center;">
+<app-vendas-produtos ></app-vendas-produtos>
+</div>
+  

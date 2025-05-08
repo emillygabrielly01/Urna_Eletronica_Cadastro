@@ -2,7 +2,7 @@ import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-import { Tarefa } from '../models/tarefa.model';
+import { vendas } from '../models/vendas.model';
 import { Produto } from '../models/produto.model';
 
 @Component({
