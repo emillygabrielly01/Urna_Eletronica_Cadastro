@@ -7,12 +7,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../models/produto.model';
 import { VendasProdutosComponent } from "../vendas-produtos/vendas-produtos.component";
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-meu-componente',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MeuComponente2Component, CommonModule, FormsModule, VendasProdutosComponent],
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MeuComponente2Component, MatIconModule, CommonModule, FormsModule, VendasProdutosComponent],
   templateUrl: './meu-componente.component.html',
   styleUrl: './meu-componente.component.scss'
 })
@@ -22,8 +23,9 @@ export class MeuComponenteComponent
   qtdProduto = 0;
   nomeProduto = '';
   precoProduto = 0;
+  codigoProduto = 0;
   produtos : Produto [] = [];
-  produtoSelecionado: Produto = new Produto('',0,0);
+  produtoSelecionado: Produto = new Produto('',0,0,0);
 
 
   //Metodo que esta no caso gravando um novo produto e editando um produto ja existente
@@ -36,6 +38,7 @@ export class MeuComponenteComponent
       this.qtdProduto = 0;
       this.nomeProduto = '';
       this.precoProduto = 0;
+      this.codigoProduto = 0;
       return;
      
     }
@@ -49,13 +52,14 @@ export class MeuComponenteComponent
       itemProdutos.nome = this.nomeProduto;
       itemProdutos.preco = this.precoProduto;
       itemProdutos.qtd = this.qtdProduto;
+      itemProdutos.codigo = this.codigoProduto;
     } 
 
     else
     {
       // E se no caso nao encontrar o valor adicionado significa que e um produto novo
       // E cria um novo produto com os valores que foram preencidos no formulario
-      const produtoNovo = new Produto(this.nomeProduto, this.precoProduto, this.qtdProduto); 
+      const produtoNovo = new Produto(this.nomeProduto, this.precoProduto, this.qtdProduto, this.codigoProduto); 
       // Adiciona esse novo produto criado a lista de produtos
       this.produtos.push(produtoNovo);
     }
@@ -64,6 +68,7 @@ export class MeuComponenteComponent
     this.nomeProduto = '';
     this.precoProduto = 0;
     this.qtdProduto = 0;
+    this.codigoProduto = 0;
   }
 
    // Metodo que vai preencher o fomulario 
@@ -76,6 +81,7 @@ export class MeuComponenteComponent
      this.nomeProduto = $event.nome;
      this.precoProduto = $event.preco;
      this.qtdProduto = $event.qtd;
+     this.codigoProduto =$event.codigo;
    
     // this.tarefa = $event.nomeTarefa;
     // this.tempoTarefa = $event.tempotarefa;
