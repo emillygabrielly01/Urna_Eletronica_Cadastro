@@ -21,6 +21,8 @@ export class ListaVendasComponent
   // No caso o Output  do produto produtoEditado
   @Output() vendaEditado = new EventEmitter<Vendas>();
 
+  @Output() itemExcluido = new EventEmitter<void>();
+
  // Metodo para excluir um produto
  excluirVenda(paramVenda : Vendas)
  { // Neste caso esta usando findIndex para procurar o produto que foi selecionado para ser excluido e ultilizando o splice para excluir
@@ -31,7 +33,8 @@ export class ListaVendasComponent
    if (posicaoVenda >= 0) 
    {
      // metodo para exluir remover
-     this.vendas.splice(posicaoVenda,1)
+     this.vendas.splice(posicaoVenda,1);
+     this.itemExcluido.emit()
    }
    // // O .findIndex retorna em qual posicoa foi encontrada a palavra contida em parametro1.
    // // O i => representa o elemento atual da lista, foi ultilizado a letra i mas podemos ultilizar qualquer letra ou palavra.

@@ -38,4 +38,6 @@
 
 <button  mat-buttonclass="button" (click)="venderProduto()" >Vender produto</button>
 
-<app-lista-vendas [vendas]="venda" ></app-lista-vendas>
+<app-lista-vendas [vendas]="venda" (itemExcluido)="calcularTotalVenda()" ></app-lista-vendas>
+
+<span>Total da venda R$ {{totalVenda | number:'1.2-2'}}</span>

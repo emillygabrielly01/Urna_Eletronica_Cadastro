@@ -25,6 +25,7 @@ import { CommonModule, NgFor } from '@angular/common';
   quantidadeVenda = 1;
   @Input() produtos: Produto[] = [];
   produtoAtual: Produto = new Produto( 0, '',0, 0);
+  totalVenda: number = 0;
   
   localizarProduto() : Produto | null | undefined
   { 
@@ -82,8 +83,19 @@ import { CommonModule, NgFor } from '@angular/common';
       this.produtoAtual = new Produto(0,'',0,0);
       this.quantidadeVenda = 1;
       this.msgProduto = '';
+      this.calcularTotalVenda();
 
     }
+
+   calcularTotalVenda(): number
+   {
+     this.totalVenda = 0;
+     this.venda.forEach(iv => {
+      this.totalVenda = this.totalVenda + (iv.precoProduto * iv.quantidadeVenda);
+     });
+     return this.totalVenda;
+   }
+
   // preencherVenda($event: Vendas) 
   // {
   //   // No caso vai atualizar o produtoSelecionado que foi escolhido
