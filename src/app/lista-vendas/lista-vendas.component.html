@@ -4,9 +4,11 @@
      
     <span style="width: 50%;">{{venda.nomeProduto}}</span>
 
-    <span style="width: 25%;">{{venda.precoProduto}}</span>
+    <span style="width: 25%;">{{(venda.precoProduto) | number:'1.2-2'}}</span>
      
     <span style="width: 25%;">{{venda.quantidadeVenda}}</span>
+
+    <span style="width: 25%;">{{(venda.quantidadeVenda * venda.precoProduto) | number:'1.2-2'}}</span>
      
     <div class="icone" (click)="excluirVenda(venda)">
          <!-- icone de deletar -->

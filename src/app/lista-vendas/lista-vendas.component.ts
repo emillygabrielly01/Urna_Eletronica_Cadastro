@@ -2,13 +2,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Vendas } from '../models/vendas.model';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Produto } from '../models/produto.model';
 
 @Component({
   selector: 'app-lista-vendas',
   standalone: true,
-  imports: [MatCheckboxModule,MatIconModule,NgFor],
+  imports: [MatCheckboxModule,MatIconModule,NgFor,CommonModule],
   templateUrl: './lista-vendas.component.html',
   styleUrl: './lista-vendas.component.scss'
 })
