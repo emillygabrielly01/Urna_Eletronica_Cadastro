@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { vendas } from '../models/vendas.model';
+import { Vendas } from '../models/vendas.model';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { NgFor } from '@angular/common';
+import { Produto } from '../models/produto.model';
 
 @Component({
   selector: 'app-lista-vendas',
@@ -13,19 +14,18 @@ import { NgFor } from '@angular/common';
 })
 export class ListaVendasComponent 
 {
-     // Input da lista(arry) de produtos
-  @Input() vendas: vendas[] = [];
+  // Input da lista(arry) de produtos
+  @Input() vendas : Vendas[] = [];
 
+  @Input() produto : Produto [] = [];
   // No caso o Output  do produto produtoEditado
-  @Output() vendaEditado = new EventEmitter<vendas>();
-  
+  @Output() vendaEditado = new EventEmitter<Vendas>();
 
  // Metodo para excluir um produto
- excluirVenda(paramVenda : vendas)
- {
-   // Neste caso esta usando findIndex para procurar o produto que foi selecionado para ser excluido e ultilizando o splice para excluir
-   const posicaoVenda = this.vendas.findIndex(v => v.nome === paramVenda.nome)
-   const produto = this.vendas.find(p => p.nome === paramVenda.nome)
+ excluirVenda(paramVenda : Vendas)
+ { // Neste caso esta usando findIndex para procurar o produto que foi selecionado para ser excluido e ultilizando o splice para excluir
+   const posicaoVenda = this.vendas.findIndex(v => v.nomeProduto === paramVenda.nomeProduto)
+   const produto = this.vendas.find(p => p.nomeProduto === paramVenda.nomeProduto)
    console.log('posição do Item na lista:' + posicaoVenda);
    console.log(produto);
    if (posicaoVenda >= 0) 
@@ -44,18 +44,19 @@ export class ListaVendasComponent
    //   this.tarefas.splice(posicaoTarefa, 1);
    // }
  }
-
  // Metodo para editar um produto
- editarVenda(paramVenda : vendas)
- {
-   //Emite o produto selecionado para ediçao para componente pai no caso o meu-componente 
+ editarVenda(paramVenda : Vendas)
+ {//Emite o produto selecionado para ediçao para componente pai no caso o meu-componente 
    this.vendaEditado.emit(paramVenda);
    // Ele exibe no console os dados do produto que esta sendo editado
    console.log(paramVenda);
  }
-   
  // concluirProduto(paramProduto : Produto)
  // {
  //   paramProduto.status = 'Concluida';
  // }
+
+ 
+
+
 }

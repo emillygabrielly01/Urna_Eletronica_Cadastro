@@ -1,17 +1,12 @@
 <div class="linha" *ngFor="let venda of vendas">
 
-    <span style="width: 25%;">{{venda.codigo}}</span>
+    <span style="width: 25%;"  >{{venda.codigoProduto}}</span>
      
-    <span style="width: 50%;">{{venda.nome}}</span>
+    <span style="width: 50%;">{{venda.nomeProduto}}</span>
 
-    <span style="width: 25%;">{{venda.preco}}</span>
+    <span style="width: 25%;">{{venda.precoProduto}}</span>
      
-     <span style="width: 25%;">{{venda.qtd}}</span>
-     
-    <div class="icone" (click)="editarVenda(venda)" >
-         <!-- icone do editar -->
-        <mat-icon>edit</mat-icon>
-    </div>
+    <span style="width: 25%;">{{venda.quantidadeVenda}}</span>
      
     <div class="icone" (click)="excluirVenda(venda)">
          <!-- icone de deletar -->

@@ -2,8 +2,8 @@ import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-import { vendas } from '../models/vendas.model';
 import { Produto } from '../models/produto.model';
+import { Vendas } from '../models/vendas.model';
 
 @Component({
   selector: 'app-meu-componente-2',
@@ -15,8 +15,9 @@ import { Produto } from '../models/produto.model';
 export class MeuComponente2Component 
 {
   // Input da lista(arry) de produtos
-  @Input() produtos: Produto[] = [];
+  @Input() produtos!: Produto[];
 
+  @Input() vendas : Vendas[]= [];
   // No caso o Output  do produto produtoEditado
   @Output() produtoEditado = new EventEmitter<Produto>();
  

@@ -1,78 +1,96 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { vendas } from '../models/vendas.model';
+import { Vendas } from '../models/vendas.model';
 import { ListaVendasComponent } from "../lista-vendas/lista-vendas.component";
 import { FormsModule } from '@angular/forms';
+import { Produto } from '../models/produto.model';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-vendas-produtos',
   standalone: true,
-  imports: [ListaVendasComponent,FormsModule],
+  imports: [ListaVendasComponent,FormsModule, ],
   templateUrl: './vendas-produtos.component.html',
   styleUrl: './vendas-produtos.component.scss'
 })
 
   export class VendasProdutosComponent 
 {
-  msgVendas = '';
-  codigoVendas = 0;
-  nomeVendas = '';
-  precoVendas  = 0;
-  qtdVendas  = 0;
-  venda : vendas [] = [];
-  vendaSelecionado: vendas = new vendas('', 0, 0, 0);
 
+  venda: Vendas[] = []; 
+  msgProduto = '';
+  codigoProduto : number = 0;
+  nomeProduto = '';
+  precoProduto  = 0;
+  quantidadeProduto = 0;
+  quantidadeVenda = 1;
+  @Input() produtos: Produto[] = [];
+  // vendaSelecionado: Vendas = new Vendas( 0, '',0, 0, 0);
   
-  venderProduto() 
-  {
-    // .some e um metodo que vai verifica se algum item da lista(array) atende a condição passada se for encontrada vai retornar true.
-    if (this.venda.find(p => p.nome.toLowerCase() === this.nomeVendas.toLowerCase())) 
-    {
-      this.msgVendas = 'Produto já existe.';
-      this.codigoVendas = 0;
-      this.nomeVendas = '';
-      this.qtdVendas  = 0;
-      this.precoVendas  = 0;
-      return;
-       
-    }
+  localizarProduto() : Produto | null | undefined
+  { 
     // find retorna o item da lista completo, mostrando todos os dados
     // Esta no caso verificando se existe um produto na lista(arry)  
-    const itemProdutos = this.venda.find(v => v.nome === this.vendaSelecionado.nome)
-  
+    const itemProdutos = this.produtos.find(v => v.codigo.toString() === this.codigoProduto.toString())
+    
     if (itemProdutos) 
     {
       // No caso se encontrar o produto e for editar ele vai retornar o produto para ser editado
-      itemProdutos.codigo = this.codigoVendas;
-      itemProdutos.nome = this.nomeVendas;
-      itemProdutos.preco = this.precoVendas;
-      itemProdutos.qtd = this.qtdVendas;
-    } 
-  
-    else
-    {
       // E se no caso nao encontrar o valor adicionado significa que e um produto novo
-      // E cria um novo produto com os valores que foram preencidos no formulario
-      const produtoNovo = new vendas(this.nomeVendas,this.codigoVendas, this.precoVendas, this.qtdVendas); 
-      // Adiciona esse novo produto criado a lista de venda
-      this.venda.push(produtoNovo);
-    }
-  
+      // E cria um novo produto com os valores que foram preencidos no formulario 
     // Limpa os campos do formulario 
-    this.codigoVendas = 0;
-    this.nomeVendas = '';
-    this.qtdVendas  = 0;
-    this.precoVendas  = 0;
+    this.codigoProduto = itemProdutos.codigo;
+    this.nomeProduto = itemProdutos.nome;
+    this.precoProduto  = itemProdutos.preco;
+    this.quantidadeProduto = itemProdutos.quantidade;
+    this.quantidadeVenda = 1;
+
+    } else
+    {
+      this.limparDados();
+
+    }
+  return itemProdutos;
   }
 
-preencherVenda($event: vendas) 
-{
-  // No caso vai atualizar o produtoSelecionado que foi escolhido
-  this.vendaSelecionado = $event;
+  venderProduto()
+    {
+      let qtdAtual = this.quantidadeVenda;
+      const produtoLocalizado = this.localizarProduto();
+      if (produtoLocalizado) 
+      {
+        this.quantidadeVenda = qtdAtual;
+        if (this.quantidadeVenda > this.quantidadeProduto) 
+      {
+        this.msgProduto = 'Quantidade de produto indisponivel';
+        return; 
+      }
+        const produtoNovo = new Vendas(produtoLocalizado.codigo, produtoLocalizado.nome,produtoLocalizado.preco, produtoLocalizado.quantidade,this.quantidadeVenda); 
+        this.venda.push(produtoNovo);
+        this.limparDados();
+        
+      }
+      
+    }
 
-  //No caso vai preencher o valores do formularios 
-  this.codigoVendas = $event.codigo;
-  this.nomeVendas = $event.nome;
-  this.precoVendas = $event.preco;
-  this.qtdVendas = $event.qtd
-}
+    limparDados()
+    {
+      this.codigoProduto = 0;
+      this.nomeProduto = '';
+      this.precoProduto  = 0;
+      this.quantidadeProduto = 0;
+      this.quantidadeVenda = 1;
+      this.msgProduto = '';
+    }
+  preencherVenda($event: Vendas) 
+  {
+    // No caso vai atualizar o produtoSelecionado que foi escolhido
+    // this.vendaSelecionado = $event;
+
+    //No caso vai preencher o valores do formularios 
+    this.codigoProduto = $event.codigoProduto;
+    this.nomeProduto = $event.nomeProduto;
+    this.precoProduto = $event.precoProduto;
+    this.quantidadeProduto = $event.quantidadeProduto;
+    this.quantidadeVenda = $event.quantidadeVenda;
+  }
 }

@@ -4,28 +4,31 @@
 
     <div style="display: flex; flex-direction: column; height: auto;">
         <span>Código do produto</span>
-        <input matInput [(ngModel)]="codigoVendas"  placeholder="Código do produto"/>
+        <input matInput [(ngModel)]="codigoProduto" (blur)="localizarProduto()" placeholder="Código do produto"/>
     </div>
         
     <div style="display: flex; flex-direction: column; height: auto;">
     <span>Nome do produto</span>
-    <input matInput [(ngModel)]="nomeVendas" placeholder="Nome do produto"/>
+    <span>{{nomeProduto}}</span>
     </div>
-
-
+    
     <div style="display: flex; flex-direction: column;" >
     <span>Preço do Produto</span>
-    <input type="number" matInput [(ngModel)]="precoVendas" placeholder="Preço do produto"/>
+    <span>{{precoProduto}}</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column;" >
+    <span>Qtd de Produtos disponível </span>
+    <span>{{quantidadeProduto}}</span>
     </div>
 
     <div style="display: flex; flex-direction: column;" >
     <span>Qtd do Produto</span>
-    <input type="number" matInput [(ngModel)]="qtdVendas" placeholder="Qtd do produto"/>
+    <input type="number" matInput [(ngModel)]="quantidadeVenda" placeholder="Qtd do produto"/>
     </div>
-
 </div>
+<span>{{msgProduto}}</span>
 
 <button  mat-buttonclass="button" (click)="venderProduto()" >Vender produto</button>
-<span>{{msgVendas}}</span>
 
-<app-lista-vendas [vendas]="venda" (vendaEditado)="preencherVenda($event)" ></app-lista-vendas>
+<app-lista-vendas [vendas]="venda" (vendaEditado)="preencherVenda($event)"  ></app-lista-vendas>

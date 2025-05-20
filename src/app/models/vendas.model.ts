@@ -1,13 +1,12 @@
-export class vendas
+export class Vendas
 {
   constructor
   ( 
-    public nome: string,
-    public codigo: number,
-    public qtd : number ,
-    public preco : number, 
-  ) 
-  {
-    
-  }
-  }
+   public codigoProduto: number,
+   public nomeProduto: string,
+   public precoProduto: number,
+   public quantidadeProduto: number,
+   public quantidadeVenda: number,
+   
+  ){}
+}
