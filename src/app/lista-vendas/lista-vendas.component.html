@@ -1,15 +1,22 @@
+<!-- Aqui eu estou criando uma linha para cada item da lista de vendas usando o *ngFor. -->
 <div class="linha" *ngFor="let venda of vendas">
 
-    <span style="width: 25%;"  >{{venda.codigoProduto}}</span>
+    <!-- Mostro o código do produto com 20% da largura da linha. -->
+    <span style="width: 20%;"  >{{venda.codigoProduto}}</span>
      
-    <span style="width: 50%;">{{venda.nomeProduto}}</span>
+    <!-- Aqui exibo o nome do produto, também ocupando 20% da linha. -->
+    <span style="width: 20%;">{{venda.nomeProduto}}</span>
 
-    <span style="width: 25%;">{{(venda.precoProduto) | number:'1.2-2'}}</span>
+    <!-- Mostro o preço do produto formatado com 2 casas decimais e exibe também ocupando 20% da linha. -->
+    <span style="width: 20%;">{{(venda.precoProduto) | number:'1.2-2'}}</span>
      
-    <span style="width: 25%;">{{venda.quantidadeVenda}}</span>
+    <!-- Exibo a quantidade vendida do produto, também ocupando 20% da linha. -->
+    <span style="width: 20%;">{{venda.quantidadeVenda}}</span>
 
-    <span style="width: 25%;">{{(venda.quantidadeVenda * venda.precoProduto) | number:'1.2-2'}}</span>
+    <!-- Aqui eu calculo e mostro o valor total da venda (quantidade × preço), também com 2 casas decimais também ocupando 20% da linha. -->
+    <span style="width: 20%;">{{(venda.quantidadeVenda * venda.precoProduto) | number:'1.2-2'}}</span>
      
+    <!-- Esse botão com ícone de lixeira chama a função excluirVenda() quando clicado, passando a venda atual. -->
     <div class="icone" (click)="excluirVenda(venda)">
          <!-- icone de deletar -->
         <mat-icon>delete</mat-icon>

@@ -1,15 +1,16 @@
+// Define a largura do componente e o layout em coluna.
 :host
 {
-    margin: 3%;
     width: 500px;
     display: flex;
     flex-direction: column;
      
 }
  
+// Espaçamento entre as linhas , Layout em linha para os elementos filhos , Cor de fundo da linha, Borda preta ao redor da linha.
 .linha
 {
-    margin: 1%;
+    margin: 2%;
     display: flex;
     flex-direction: row;
     background-color: #d5d5fc;
@@ -17,6 +18,7 @@
     
 }
 
+// Espaçamento interno,Esconde o texto que ultrapassa o limite,Borda à direita para separar as colunas.
 span
 {
     margin: 1%;
@@ -27,6 +29,8 @@ span
     border-right: 1px solid rgb(0, 0, 0);
 }
 
+
+// Espaçamento ao redor do ícone,Cor roxa para os ícones.
 .icone
 {
     margin: 1%;

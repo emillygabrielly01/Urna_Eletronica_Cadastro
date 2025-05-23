@@ -1,43 +1,55 @@
+<!-- Aqui eu coloco um título para a lista de Vendas de produtos. -->
 <p>Vendas de Produtos</p>
 
 <div  style="display: flex; width: 100%; justify-content: center;">
-
+    
     <div style="display: flex; flex-direction: column; height: auto;">
+        <!-- Campo para digitar o código do produto -->
         <span>Código do produto</span>
+        <!-- Quando o campo perde o foco (blur), chama o método localizarProduto -->
         <input matInput [(ngModel)]="produtoAtual.codigo" (blur)="localizarProduto()" placeholder="Código do produto"/>
     </div>
         
     <div style="display: flex; flex-direction: column; height: auto;">
-    <span>Nome do produto</span>
-    <span>{{produtoAtual.nome}}</span>
+        <!-- Exibe o nome do produto localizado -->
+        <span>Nome do produto</span>
+        <span>{{produtoAtual.nome}}</span>
     </div>
     
     <div style="display: flex; flex-direction: column;" >
-    <span>Preço do Produto</span>
-    <!--
-    A estrutura pipe e ultilizada para formatar numeros ,datas, telefones etc...
-    A estrutura pipe e composta da seguinte forma:  | tipo de dado: 'formatação'
-    ultilizei o pipe | number:'1.2-2' para formatar o valor da propriedade .preco para q ela exiba dois carecteres 0 apos o simbolo decimal
-    
-    -->
-    <span>{{produtoAtual.preco | number:'1.2-2'}}</span>
+        <!-- Exibe o preço do produto com formatação de 2 casas decimais -->
+        <span>Preço do Produto</span>
+        <!--
+        A estrutura pipe e ultilizada para formatar numeros ,datas, telefones etc...
+        A estrutura pipe e composta da seguinte forma:  | tipo de dado: 'formatação'
+        ultilizei o pipe | number:'1.2-2' para formatar o valor da propriedade .preco para
+        q ela exiba dois carecteres 0 apos o simbolo decimal-->
+        <span>{{produtoAtual.preco | number:'1.2-2'}}</span>
     </div>
 
     <div style="display: flex; flex-direction: column;" >
-    <span>Qtd de Produtos disponível </span>
-    <span>{{produtoAtual.quantidade}}</span>
+        <!-- Exibe a quantidade disponível do produto -->
+        <span>Qtd de Produtos disponível </span>
+        <span>{{produtoAtual.quantidade}}</span>
     </div>
 
     <div style="display: flex; flex-direction: column;" >
-    <span>Qtd do Produto</span>
-    <input type="number" matInput [(ngModel)]="quantidadeVenda" placeholder="Qtd do produto"/>
+        <!-- Campo para digitar a quantidade que será Comprada -->
+        <span>Qtd do Produto</span>
+        <input type="number" matInput [(ngModel)]="quantidadeVenda" placeholder="Qtd do produto"/>
     </div>
     
 </div>
+
+
+<!-- Exibe mensagens de Quantidade de produto indisponivel -->
 <span>{{msgProduto}}</span>
 
+<!-- Botão para realizar a venda -->
 <button  mat-buttonclass="button" (click)="venderProduto()" >Vender produto</button>
 
+<!-- Componente filho que exibe a lista de vendas -->
 <app-lista-vendas [vendas]="venda" (itemExcluido)="calcularTotalVenda()" ></app-lista-vendas>
 
+<!-- Exibe o total da venda com formatação -->
 <span>Total da venda R$ {{totalVenda | number:'1.2-2'}}</span>

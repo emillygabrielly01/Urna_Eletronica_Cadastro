@@ -7,6 +7,7 @@ export class Vendas
    public precoProduto: number,
    public quantidadeProduto: number,
    public quantidadeVenda: number,
-   
-  ){}
+  )
+  {
+  }
 }

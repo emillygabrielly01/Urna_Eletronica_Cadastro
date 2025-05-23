@@ -6,6 +6,5 @@ export class Candidato
         public numero:string
     )
     {
-
     }
 }

@@ -1,3 +1,4 @@
+// Aqui defino o estilo do componente principal, com margem, largura fixa e layout em coluna.
 :host
 {
     margin: 3%;
@@ -7,6 +8,7 @@
      
 }
  
+// Cada linha de venda tem uma margem, é exibida em linha (horizontal), com fundo azul claro e borda preta.
 .linha
 {
     margin: 1%;
@@ -17,6 +19,7 @@
     
 }
 
+// Os span têm margem, escondem texto que ultrapassa o espaço, colocam "..." no final e têm uma borda à direita.
 span
 {
     margin: 1%;
@@ -27,6 +30,7 @@ span
     border-right: 1px solid rgb(0, 0, 0);
 }
 
+// O ícone de deletar tem uma margem e uma cor roxa escura.
 .icone
 {
     margin: 1%;

@@ -1,5 +1,7 @@
-export class Produto {
-  constructor(
+export class Produto 
+{
+  constructor
+  (
     public codigo: number,
     public nome: string,
     public preco: number,

@@ -1,40 +1,47 @@
+<!-- Aqui eu coloco um título para a lista de produtos. -->
 <p class="icone-voltar">Lista de Produtos</p>
 
+<!-- Container principal com layout centralizado -->
 <div  style="display: flex; width: 100%; justify-content: center;">
 
 <div style="display: flex; flex-direction: column; height: auto;">
+    <!-- Esse campo é para digitar o código do produto. Ele está ligado ao modelo produtoSelecionado.codigo. -->
     <span>Código do produto</span>
-    <input matInput [(ngModel)]="codigoProduto"  placeholder="Código do produto"/>
+    <input matInput [(ngModel)]="produtoSelecionado.codigo"  placeholder="Código do produto"/>
 </div>
     
 <div style="display: flex; flex-direction: column; height: auto;">
-<span>Nome do produto</span>
-<input matInput [(ngModel)]="nomeProduto" placeholder="Nome do produto"/>
+    <!-- Aqui o usuário digita o nome do produto. Também está ligado ao modelo. -->
+    <span>Nome do produto</span>
+    <input matInput [(ngModel)]="produtoSelecionado.nome" placeholder="Nome do produto"/>
 </div>
 
 
 <div style="display: flex; flex-direction: column;" >
-<span>Preço do Produto</span>  
-<input type="number" matInput  [(ngModel)]="precoProduto"/>
+    <!-- Campo para adicionar o preço do produto. -->
+    <span>Preço do Produto</span>  
+    <input type="number" matInput  [(ngModel)]="produtoSelecionado.preco"/>
 </div>
 
-<div style="display: flex; flex-direction: column;" >
-<span>Qtd do Produto</span>
-<input type="number" matInput  [(ngModel)]="quanidade"/>
+<div style="display: flex; flex-direction: column;" > 
+    <!-- Aqui o usuário informa a quantidade do produto. -->
+    <span>Qtd do Produto</span>
+    <input type="number" matInput  [(ngModel)]="quanidade"/>
 </div>
 
 </div>
 
 <!-- Ao ser clicado o botao chama o metodo novaTarefa -->
-
+<!-- Botão que chama a função gravarProduto() para salvar ou editar o produto. -->
 <button  mat-button (click)="gravarProduto()" class="button" [disabled]="" >Gravar produto</button>
 
+<!-- Mostra uma mensagem de feedback, como "Produto já existe -->
 <span>{{msgProduto}}</span>
 
 <app-meu-componente-2  [produtos]="produtos" (produtoEditado)="preencherProduto($event)" ></app-meu-componente-2>
 
 <div style="width: 100%; height: 50%; display: flex; flex-direction: column; align-items: center;">
-<app-vendas-produtos [produtos]="produtos" ></app-vendas-produtos>
+   <app-vendas-produtos [produtos]="produtos" ></app-vendas-produtos>
 </div>
 
   

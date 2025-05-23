@@ -13,7 +13,6 @@ export class Professor extends Candidato
         new Professor('João', '102'),
         new Professor('Cleverton', '110')
       ];
-
       return professores;
     }
 }

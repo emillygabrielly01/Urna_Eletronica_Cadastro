@@ -1,18 +1,25 @@
+<!-- Crio uma div para cada produto da lista usando *ngFor -->
 <div class="linha" *ngFor="let produto of produtos">
 
-    <span style="width: 50%;">{{produto.codigo}}</span>
+    <!-- Exibo o código do produto com largura de 20% -->
+    <span style="width: 20%;">{{produto.codigo}}</span>
      
-    <span style="width: 50%;">{{produto.nome}}</span>
+    <!-- Exibo o nome do produto com largura de 20% -->
+    <span style="width: 20%;">{{produto.nome}}</span>
 
-    <span style="width: 25%;">{{produto.preco | number:'1.2-2'}}</span>
+    <!-- Exibo o preço formatado com 2 casas decimais -->
+    <span style="width: 20%;">{{produto.preco | number:'1.2-2'}}</span>
      
-     <span style="width: 25%;">{{produto.quantidade}}</span>
+    <!-- Exibo a quantidade do produto -->
+    <span style="width: 20%;">{{produto.quantidade}}</span>
      
+    <!-- Botão de editar com ícone, chama o método editarProduto ao clicar -->
     <div class="icone" (click)="editarProduto(produto)" >
          <!-- icone do editar -->
         <mat-icon>edit</mat-icon>
     </div>
      
+    <!-- Botão de deletar com ícone, chama o método excluirProduto ao clicar -->
     <div class="icone" (click)="excluirProduto(produto)">
          <!-- icone de deletar -->
         <mat-icon>delete</mat-icon>
